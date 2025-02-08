@@ -5,10 +5,9 @@ import { PostsModule } from './posts/posts.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({ isGlobal: true }), // Load .env globally
-    MongooseModule.forRoot(process.env.MONGODB_URI  || ''), // Use the env variable
+    ConfigModule.forRoot({ isGlobal: true }),
+    MongooseModule.forRoot(process.env.MONGODB_URI as string),
     PostsModule,
   ],
 })
 export class AppModule {}
-

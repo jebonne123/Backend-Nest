@@ -6,11 +6,11 @@ async function bootstrap() {
 
     // Enable CORS
     app.enableCors({
-      origin: 'http://localhost:5174', // Allow frontend to access API
+      origin: ['http://localhost:5174', '*'],// Allow frontend to access API
       methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
       credentials: true, // Allow cookies or authentication headers
     });
-  
+
 
   await app.listen(process.env.PORT ?? 3000);
 }
